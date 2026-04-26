@@ -15,5 +15,4 @@ defaults:
       layout: page
 
 header_pages:
-  - projects.md
   - notes.md

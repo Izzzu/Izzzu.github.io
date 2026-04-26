@@ -1,7 +1,16 @@
 ---
 layout: page
+title: Projects
 ---
 
-[your intro here — who you are, what you work on, a line or two]
+{% for project in site.projects %}
+### [{{ project.title }}]({{ project.url }})
 
-Browse [Projects](/projects/) or [Notes](/notes/).
+{{ project.description }}
+
+{% if project.tags %}**{{ project.tags | join: " · " }}**{% endif %}
+{% if project.github %} · [GitHub]({{ project.github }}){% endif %}
+{% if project.demo %} · [Demo]({{ project.demo }}){% endif %}
+
+---
+{% endfor %}
