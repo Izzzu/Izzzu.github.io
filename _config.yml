@@ -1,3 +1,19 @@
 title: Refresh Cache Blog
 description: A blog about my thoughts and projects
 theme: minima
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: page
+
+header_pages:
+  - projects.md
+  - notes.md
