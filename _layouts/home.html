@@ -13,10 +13,12 @@ layout: default
           <a href="{{ project.github | default: project.url }}">{{ project.title }}</a>
         </h3>
         <p class="mb-1">{{ project.description }}</p>
-        <p>
-          {% if project.tags %}<strong>{{ project.tags | join: " · " }}</strong>{% endif %}
-          {% if project.demo %} &middot; <a href="{{ project.demo }}">Demo</a>{% endif %}
-        </p>
+        {% if project.tags %}
+          <span class="post-tags">
+            {% for tag in project.tags %}<span class="post-tag">{{ tag }}</span>{% endfor %}
+          </span>
+        {% endif %}
+        {% if project.demo %}<p class="mt-2"><a href="{{ project.demo }}">Demo</a></p>{% endif %}
       {% endfor %}
     </div>
   </div>

@@ -10,8 +10,10 @@ order: 4
 
 {{ project.description }}
 
-{% if project.tags %}**{{ project.tags | join: " · " }}**{% endif %}
-{% if project.demo %} · [Demo]({{ project.demo }}){% endif %}
+{% if project.tags %}<span class="post-tags">{% for tag in project.tags %}<span class="post-tag">{{ tag }}</span>{% endfor %}</span>{% endif %}
+{% if project.demo %}
+
+[Demo]({{ project.demo }}){% endif %}
 
 ---
 {% endfor %}
