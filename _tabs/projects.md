@@ -6,7 +6,7 @@ order: 4
 ---
 
 {% for project in site.projects %}
-### [{{ project.title }}]({{ project.url }})
+### [{{ project.title }}]({{ project.github | default: project.url }})
 
 {{ project.description }}
 
