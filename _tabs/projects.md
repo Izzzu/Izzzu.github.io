@@ -1,6 +1,8 @@
 ---
-layout: page
+# the default layout is 'page'
 title: Projects
+icon: fas fa-diagram-project
+order: 4
 ---
 
 {% for project in site.projects %}
