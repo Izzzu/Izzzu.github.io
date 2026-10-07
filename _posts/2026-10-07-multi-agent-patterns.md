@@ -6,19 +6,19 @@ mermaid: true
 media_subpath: /assets/img/posts/2026-10-07-multi-agent-patterns
 ---
 
-This post gives an overview and comparison of orchestration patterns for multi-agent systems.
+Overview and comparison of orchestration patterns for multi-agent systems.
 
 It's tempting to reach for the most powerful pattern every time, but each one comes with its own trade-offs in coordination, efficiency, and flexibility.
 
-See the repo [here](https://github.com/Izzzu/agentic-travel-assistant), that implements a fictional multi-agent travel assistant to show these patterns in action. To run the agent follow the instructions in the [README](https://github.com/Izzzu/agentic-travel-assistant#readme).
+The article is backed by the implementation and examples provided in the [agentic-travel-assistant repository](https://github.com/Izzzu/agentic-travel-assistant). It implements a fictional multi-agent travel assistant to show these patterns in action. To run the agent follow the instructions in the [README](https://github.com/Izzzu/agentic-travel-assistant#readme).
 
-Libraries such as AutoGen already help with implementing multi-agent orchestration. This repo uses a custom implementation instead, for learning purposes. The Handoff and Magentic patterns are also built with AutoGen for comparison, see [AutoGen version](https://github.com/Izzzu/agentic-travel-assistant#autogen-version).
+This repo uses a custom implementation of the multi-agent orchestration patterns, for learning purposes, but there are many libraries such as AutoGen that already help with implementing multi-agent orchestration. To see some examples in action, check out the [AutoGen implementations](https://github.com/Izzzu/agentic-travel-assistant#autogen-version) of the Handoff and Magentic patterns. 
 
 ## Demo purpose
 
-The [repo](https://github.com/Izzzu/agentic-travel-assistant) demonstrates each pattern with minimal implementation complexity. The agents are LLMs with different prompts, but they run in the same process and environment. To learn how separately deployed agents can interact, see the [A2A protocol](https://a2a-protocol.org/latest/).
+The [repo](https://github.com/Izzzu/agentic-travel-assistant) demonstrates each pattern with minimal implementation complexity. The agents are LLMs with different prompts, but they run in the same process and environment. To learn how separately deployed agents can interact, see e.g. the [A2A protocol](https://a2a-protocol.org/latest/).
 
-Below you'll find a detailed explanation and example of each pattern.
+Below you'll find an explanation and example of each pattern.
 
 ## Sequential
 
@@ -46,7 +46,7 @@ Multiple agents interact in a shared group chat, coordinating their actions and 
 
 ![Conceptual diagram](group_chat.png)
 
-### How it works in the current implementation
+### How it works in the demo implementation
 
 A moderator agent (the Travel Consultant) coordinates the conversation and decides who speaks next. Every speaker sees the whole conversation history and answers based on all the information available.
 
