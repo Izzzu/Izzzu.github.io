@@ -2,7 +2,7 @@
 title: "A private finance assistant: monthly spending aggregation with locally hosted LLM"
 date: 2026-10-19 09:00:00 +0000
 tags: 
-media_subpath: 
+media_subpath: /assets/img/posts/2026-10-19
 ---
 
 ## Context
@@ -40,8 +40,6 @@ CSV ──► column detection ────────────────�
                                                                                │
                                                                    rules first, then the LLM
 ```
-/claude add image assets/img/posts/2026-10-19/diagram.png
-
 ### The model
 
 The choice for both the categorisation and parsing models settled on `qwen3:8b`, running via Ollama on my own hardware: my Mac locally, a T4 GPU in Azure. It worked well from the start and seems a good trade-off between reasoning quality and resource use.
